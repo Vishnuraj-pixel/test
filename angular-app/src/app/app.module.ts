@@ -3,14 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-
+import {  routingComponents} from './app-routing.module';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserCreateComponent } from './user-create/user-create.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
+import { HeaderUserComponent } from './header/header-user/header-user.component';
+import { HeaderSignInComponent } from './header/header-sign-in/header-sign-in.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
-    SignUpComponent
+    routingComponents,
+    UserListComponent,
+    UserCreateComponent,
+    UserUpdateComponent,
+    HeaderUserComponent,
+    HeaderSignInComponent
   ],
   imports: [
     BrowserModule,
