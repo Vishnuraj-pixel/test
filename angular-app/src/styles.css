@@ -10,7 +10,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box; 
 }
-/* Sign-in & Sign-up */
+
 body {
     font-family: "Muli-Regular";
     font-size: 14px;
@@ -661,7 +661,7 @@ body {
     }
     header {
         position: fixed;
-        background: #22242A;
+        background:#22242A;
         padding: 20px;
         width: 100%;
         height: 70px;
@@ -675,11 +675,11 @@ body {
         padding-left: 25px;
     }
     .left-area span {
-        color: #1DC4E7;
+        color:	#FF7722;
     }
     .logout_btn {
         padding: 5px;
-        background: #19B3DF;
+        background:	#FF7722;
         text-decoration: none;
         float: right;
         margin-top: -40px;
@@ -692,11 +692,11 @@ body {
         transition-property: background;
     }
     .logout_btn:hover {
-        background: #0D9DBB;
+        background: #FF6633;
         text-decoration: none;
     }
     .sidebar {
-        background: #2F323A;
+        background: #4b0082;
         margin-top: 70px;
         padding-top: 30px;
         position: fixed;
@@ -728,7 +728,7 @@ body {
         transition-property: background;
     }
     .sidebar a:hover {
-        background: #19B3D3;
+        background:#FF7722;
     }
     .sidebar i {
         padding: 5px;   
@@ -744,7 +744,7 @@ body {
         transition-property: color;
     }
     label #sidebar_btn:hover {
-        color: #19B3D3;
+        color: #4b0082;
     
     }
     #check:checked ~ .sidebar {
@@ -787,6 +787,4 @@ body {
         transform: translate(-50%,-50%);
         justify-content: center;
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    }
-
-    
+    }    

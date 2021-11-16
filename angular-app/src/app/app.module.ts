@@ -9,6 +9,7 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { HeaderUserComponent } from './header/header-user/header-user.component';
 import { HeaderSignInComponent } from './header/header-sign-in/header-sign-in.component';
+import { FooterUserComponent } from './footer/footer-user/footer-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { HeaderSignInComponent } from './header/header-sign-in/header-sign-in.co
     UserCreateComponent,
     UserUpdateComponent,
     HeaderUserComponent,
-    HeaderSignInComponent
+    HeaderSignInComponent,
+    FooterUserComponent,
   ],
   imports: [
     BrowserModule,
