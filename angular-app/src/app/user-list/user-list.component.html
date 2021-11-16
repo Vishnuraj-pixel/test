@@ -1,4 +1,40 @@
 <app-header-user></app-header-user>
-<div class="content">
+<body class="adminPanel">
+    <input type="checkbox" id="check">
 
+<header>
+    <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left-area">
+        <h3>Admin <span>Panel</span></h3>
+    </div>
+    <div class="right_area">
+        <a routerLink="/sign-in" class="logout_btn">Logout</a>
+    </div>
+</header>
+<div class="sidebar">
+        <!-- <img src="images/user-image.png" class="profile_image" alt=""> -->
+        <h4>My Admin</h4>
+        <a routerLink = "/create" routerLinkActive="active">
+        <i class="fas fa-plus-square"></i><span>Create user</span>
+        </a>
+        <a routerLink = "/list" routerLinkActive="create">
+            <i class="fas fa-table"></i><span>List user</span>
+        </a>
+</div>
+<div class="content">
+    <div class="content-container-2">
+        <h1 style="font-size:x-large;text-align: center;">List of User</h1>
+        <div class="content-container-oneView">
+           <table>
+               <th>Id</th>
+               <th>Email</th>
+               <th>First name</th>
+               <th>Last name</th>
+               <th>Action</th>
+           </table>
+        </div>
+        
+    </div>
 </div>

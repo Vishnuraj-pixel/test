@@ -197,418 +197,8 @@ body {
       background: none; } }
 
 
-    /* Dashboard */
-    
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
-    .header{
-        min-height: 100vh;
-        width: 100%;
-        background: linear-gradient(var(#0F2027), var(#203A43), var(#2C5364));
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;  
-    }
-    #container {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width:400px;
-        height: 310px;
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
-        color: #3d7eff;
-        border: none;
-        opacity: 0.6;
-        background-color: #000;
-        z-index: 2;
-    }
-    .sub-container {
-        padding: 15px;
-    }
-    #container-h1{
-        font-size: 100;
-        font-family: 'Abel', sans-serif;
-    }
-    .container-book {
-        left: 0px;
-        width: 100px;    
-    }
-    .btn-block {
-        border: none;
-        cursor: pointer;
-        transition: 0.5s;
-        text-align: center;
-        transition: all 0.5s ease-in;
-    }
-    .btn-block {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
-    .btn-block::after {
-        content: ">>";
-        position: absolute;
-        opacity: 0;  
-        top: 10px;
-        left: 60px;
-        right: -20px;
-        transform: 0.5s ease-in-out;
-    }
-    .btn-block:hover {
-        padding-right: 24px;
-        padding-left: 8px;
-    }
-    .btn-block:hover::after {
-        opacity: 1;
-        right: 10px;
-    }
-    .validation {
-        width: 60%;
-        height: 90%;
-        border: none;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-        position: fixed;
-        top: 5%;
-        right: 0%;
-        opacity: 0;
-    }
-    .validation-left {
-        height: 100%;
-        width: 50%;
-        float: left;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border: none;
-        background: url(images/background-validation.jpg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-    }
-    .validation-right {
-        padding: 40px;
-        height: 100%;
-        width: 50%;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        float: right;
-        border: none;
-        background-color: #000;
-    }
-    .input-group {
-        background-color: none;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-    .formControl {
-        width: 100%;
-        height: 30px;
-        background: none;
-        border: none;
-        border-bottom: 0.1px solid rgb(153, 153, 153); 
-    }
-    .formControl::after {
-        width: 100%;
-        height: 30px;
-        background: none;
-        border: none;
-        border-bottom: 0.1px solid rgb(153, 153, 153); 
-    }
-    .formControl-file {
-        position: absolute;
-        z-index: -2;
-        top: 10px;
-        left: 8px;
-        color: #FFF;
-    }
-    .button-wrap {
-        position: relative;
-    }
-    .button {
-        cursor: pointer;
-        border-radius: 10px;
-        background-color: #5cdb55;
-        width: 100%;
-        padding: 5px;
-        color: #fff;
-      }
-    .input-group-addon {
-        background-color: #000; 
-        border: none;
-    }
-    .login {
-        color: #FFF;
-    }
-    #submit {
-        width: 40%;
-        padding: 5px;
-        border-radius: 25px;
-        border: none;
-        background: #3d7eff;
-        color: #FFF;
-    }
-    #formValidationClose {
-        width: 40%;
-        padding: 5px;
-        border-radius: 25px;
-        color: #FFF;
-        border: none;
-        background: #5cdb55;
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
-    #formValidationClose::after {
-        content: "<<";
-        position: absolute;
-        opacity: 0;  
-        top: 5px;
-        right: 60px;
-        left: -20px;
-        transform: 0.5s;
-    }
-    #formValidationClose:hover {
-        padding-left: 24px;
-        padding-right: 8px;
-    }
-    #formValidationClose:hover::after {
-        opacity: 1;
-        left: 10px;
-    }
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        transition: 0.7s;
-      }
-      
-      /* Modal Content */
-      .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        position: absolute;
-        top: 5%;
-        left: 30%;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 35%;
-      }
-      
-      /* The Close Button */
-      .close {
-        color: #aaaaaa;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      
-      .close:hover,
-      .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    
-    /* ------------------------------- Media query ------------------------------*/
-    @media only screen and (max-width: 300px) {
-        /* For mobile phonesunder 4inch screen */
-        #container {
-            width: 240px;
-            height: 200px;
-            
-        }
-        .sub-container {
-            padding: 5px;
-        }
-        .container-h1{
-            font-size: 20px;
-        }
-        .container-book {
-            width: 30px;    
-        }
-        #container p {
-            font-size: 12px;
-        }
-        .btn-block {
-            padding: 5px;
-            font-size: 12px;
-        }
-        .btn-block::after { 
-            top: 5px;
-        }
-        .validation {
-            min-height: 100vh;
-            min-width: 100%;
-            width: 100vh;
-            margin: 0%;
-            border: none;
-            text-align: center;
-            box-shadow: none;
-            top: 0%;
-            right: 0%;
-        }
-        .validation-left {
-            height: 50%;
-            width: 100%;
-            float: none;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            border: none;
-        }
-        .validation-right {
-            padding: 40px;
-            height: 100%;
-            width: 50%;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            float: none;
-            border: none;
-            background-color: #000;
-        }
-        .input-group {
-            background-color: none;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-        .formControl {
-            width: 100%;
-            height: 30px;
-            background: none;
-            border: none;
-            border-bottom: 0.1px solid rgb(153, 153, 153); 
-        }
-        .formControl::after {
-            width: 100%;
-            height: 30px;
-            background: none;
-            border: none;
-            border-bottom: 0.1px solid rgb(153, 153, 153); 
-        }
-        .formControl-file {
-            position: absolute;
-            z-index: -2;
-            top: 10px;
-            left: 8px;
-            color: #FFF;
-        }
-        .input-group-addon {
-            background-color: #000; 
-            border: none;
-        }
-        .login {
-            color: #FFF;
-        }
-        #submit {
-            width: 40%;
-            padding: 5px;
-            border-radius: 25px;
-            border: none;
-            background: #3d7eff;
-            color: #FFF;
-        }
-        #formValidationClose {
-            width: 40%;
-            padding: 5px;
-            border-radius: 25px;
-            color: #FFF;
-            border: none;
-            background: #5cdb55;
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            transition: 0.5s;
-        }
-        #formValidationClose::after {
-            content: "<<";
-            position: absolute;
-            opacity: 0;  
-            top: 5px;
-            right: 60px;
-            left: -20px;
-            transform: 0.5s;
-        }
-        #formValidationClose:hover {
-            padding-left: 24px;
-            padding-right: 8px;
-        }
-        #formValidationClose:hover::after {
-            opacity: 1;
-            left: 10px;
-        }
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            transition: 0.7s;
-          }
-          
-          /* Modal Content */
-          .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            position: absolute;
-            top: 5%;
-            left: 30%;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 35%;
-          }
-          
-          /* The Close Button */
-          .close {
-            color: #aaaaaa;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            font-size: 28px;
-            font-weight: bold;
-          }
-          
-          .close:hover,
-          .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-          }
-    
-    
-      }  
-    
-    
-    
-    @media only screen and (min-width: 301px) and (max-width: 768px) {
-        /* For mobile phones: */
-        
-      }
+    /* Dashboard */ 
+
     
     /* ------------------------------ admin-login.php ------------------------------ */
     .admin-header{
@@ -650,11 +240,7 @@ body {
     }
 
 
-    :root{
-        --firstColor: #000000;
-        --secondColor: #0f9b0f;  
-    }
-    body {
+    .adminPanel {
         margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
@@ -715,6 +301,7 @@ body {
     .sidebar h4 {
         color: #CCC;
         margin-top: 0;
+        text-align: center;
         margin-bottom: 20px;
     }
     .sidebar a {
@@ -738,7 +325,7 @@ body {
         color: #FFF;
         position: fixed;
         cursor: pointer;
-        left: 300px;
+        left: 220px;
         font-size: 20px;
         margin: 3px 0;
         transition-property: color;
@@ -749,7 +336,6 @@ body {
     }
     #check:checked ~ .sidebar {
         left: -190px;
-    
     }
     #check:checked ~ .sidebar a span {
         display: none;
@@ -761,6 +347,7 @@ body {
     }
     .content {
         margin-left: 250px;
+        padding-top: 17%;
         background: linear-gradient(135deg, #373B44, #4286f4);
         background-repeat: no-repeat;
         background-position: center;
@@ -774,17 +361,49 @@ body {
     #check {
         display: none;
     }
-    .content-container {
-        padding: 20px;
-        border: 1px solid black;
-        width: 40%;
-        height: 28%;
-        background: #FFF;
+    .content-container-1 {
+        padding-left: 22%;
+        padding-right: 22%;
         border: none;
+        width: 100%;
+        height: 123%;
+        background: none;
         position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        top: -40%;
+        left: 0%;
         justify-content: center;
+        /*  */
+    }
+    .content-container-oneView {
+        margin-left: 10%;
+        margin-top: 10px;
+        border: 1px solid #000;
+        background: none;
+        border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    }    
+    }
+    .row-oneView {
+        display: flex;
+        justify-content: space-between;
+    }
+    .row-oneView-left {
+        flex-basis: 31%;
+    }
+    .row-oneView-right {
+        flex-basis: 31%;
+        padding: 20px;
+    }
+
+    .content-container-2 {
+        padding-left: 7%;
+        padding-right: 7%;
+        border: none;
+        width: 100%;
+        height: 123%;
+        background: none;
+        position: relative;
+        top: -40%;
+        left: 0%;
+        justify-content: center;
+        /*  */
+    }

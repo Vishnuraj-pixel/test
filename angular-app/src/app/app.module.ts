@@ -10,6 +10,9 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 import { HeaderUserComponent } from './header/header-user/header-user.component';
 import { HeaderSignInComponent } from './header/header-sign-in/header-sign-in.component';
 import { FooterUserComponent } from './footer/footer-user/footer-user.component';
+
+import {  HttpClientModule  } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ import { FooterUserComponent } from './footer/footer-user/footer-user.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
