@@ -12,6 +12,9 @@ import { HeaderSignInComponent } from './header/header-sign-in/header-sign-in.co
 import { FooterUserComponent } from './footer/footer-user/footer-user.component';
 
 import {  HttpClientModule  } from '@angular/common/http';
+import { UserLoginService } from './user-login.service';
+import { FormsModule } from '@angular/forms';
+import { UserListService } from './user-list.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,11 @@ import {  HttpClientModule  } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserLoginService, UserListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

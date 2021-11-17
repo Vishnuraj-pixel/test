@@ -30,13 +30,16 @@
         <div class="content-container-oneView">
             <div class="row-oneView">
                 <div class="row-oneView-left">
-                    <img src="assets/images/image-1.png">
+                    <img class="avatar" [src]="itemImageUrl">
+                    <div class="middle">
+                        <div class="text">{{userCreate.first_name}}</div>
+                      </div>
                 </div>
                 <div class="row-oneView-right">
-                    <p>ID:</p>
-                    <p>Email:</p>
-                    <p>FirstName:</p>
-                    <p>LastName:</p>
+                    <p>ID:{{userCreate.id}}</p>
+                    <p>Email: {{userCreate.email}}</p>
+                    <p>FirstName: {{userCreate.first_name}}</p>
+                    <p>LastName: {{userCreate.last_name}}</p> 
                 </div>
             </div>
         </div>

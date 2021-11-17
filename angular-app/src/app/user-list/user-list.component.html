@@ -28,12 +28,45 @@
         <h1 style="font-size:x-large;text-align: center;">List of User</h1>
         <div class="content-container-oneView">
            <table>
-               <th>Id</th>
-               <th>Email</th>
-               <th>First name</th>
-               <th>Last name</th>
-               <th>Action</th>
+               <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor = "let user of userList">
+                    <td>{{user.id}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>
+                        <div class="btn-group btn-group-toggle btn-danger" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                          <input type="radio" name="options" id="option2" autocomplete="off" checked>Update
+                        </label>
+                        <label class="btn btn-secondary active">
+                          <input type="radio" name="options" id="option3" autocomplete="off"> Delete
+                        </label>
+                      </div>
+                    </td>
+                </tr>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
            </table>
+            <!-- <ul *ngFor = "let u of userList">
+                <li>{{u.id}}, {{u.first_name}}</li>
+            </ul> -->
         </div>
         
     </div>

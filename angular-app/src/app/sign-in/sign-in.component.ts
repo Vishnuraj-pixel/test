@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserLoginService } from '../user-login.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  userLogIn = [];
 
-  constructor() { }
+  constructor(private _userLoginService: UserLoginService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this._userLoginService.getUserLogin().subscribe(data => this.userLogIn = data);
   }
-
 }
