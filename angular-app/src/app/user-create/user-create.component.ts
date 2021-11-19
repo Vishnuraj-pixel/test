@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserCreateService } from '../user-create.service';
-import { UserLoginService } from '../user-login.service';
 
 @Component({
   selector: 'app-user-create',
@@ -10,18 +10,34 @@ import { UserLoginService } from '../user-login.service';
 export class UserCreateComponent implements OnInit {
   userCreate: any = [];
   itemImageUrl : any;
+  // pagesInUrl:any;
+  id:string = "";
 
-  constructor(private _userCreateService: UserCreateService) { }
+  totalPages:Number | undefined;
+  userId: any;
+
+  constructor(private _userCreateService: UserCreateService, private route: Router, private router: ActivatedRoute ) { 
+    // this.id = this.route.snapshot.param[('id')];
+  }
   
   ngOnInit() {
-    this._userCreateService.getUserCreate().subscribe((data:any) => {
+    this.router.paramMap.subscribe((params: ParamMap) => {
+      let id = params.get('id');
+      this.userId = id;
+      console.log(this.userId)
+    })
+    this._userCreateService.getUserCreate(this.userId).subscribe((data:any) => {
       this.userCreate = data.data,
-      console.log(data.data)
+      // console.log(data.data)
       this.itemImageUrl = data.data.avatar;
-    });
-   
-    
+      // console.log(data.data.id);
+      }); 
   } 
+
+  logOut() {
+    localStorage.removeItem("token");
+    this.route.navigate(['/sign-in']);
+  }
  
 
 }

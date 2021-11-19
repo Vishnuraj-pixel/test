@@ -1,1 +1,49 @@
-<p>user-update works!</p>
+<app-header-user></app-header-user>
+<body class="adminPanel">
+    <input type="checkbox" id="check">
+
+<header>
+    <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left-area">
+        <h3>Admin <span>Panel</span></h3>
+    </div>
+    <div class="right_area">
+        <!-- <a (click)="logOut()" class="logout_btn">Logout</a> -->
+    </div>
+</header>
+<div class="sidebar">
+        <!-- <img src="images/user-image.png" class="profile_image" alt=""> -->
+        <h4>My Admin</h4>
+        <!-- <a routerLink = "/create" routerLinkActive="active">
+        <i class="fas fa-plus-square"></i><span>Create user</span>
+        </a> -->
+        <a routerLink = "/list" routerLinkActive="create">
+            <i class="fas fa-table"></i><span>List user</span>
+        </a>
+</div>
+<div class="content">
+    <div class="content-container-2">
+        <div class="content-container-oneView">
+            <form #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)" style="width: 40%; left:25%;">
+                <h3>Update User</h3>
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <input type="text" [value]="userName" ngModel name = "name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-briefcase"></span>
+                    <input type="text" ngModel name = "job" class="form-control" placeholder="Job">
+                </div>
+                <button>
+                    <span>Change</span>
+                </button>
+                <!-- <ul *ngFor = "let u of userLogIn">
+                    <li>{{u.email}}</li>
+                </ul> -->
+            </form>
+        </div>
+        
+    </div>
+</div>

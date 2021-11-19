@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>RegistrationForm_v10 by Colorlib</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<!-- LINEARICONS -->
-		<link rel="stylesheet" href="/src/assets/fonts/linearicons/style.css">
-
-        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-		
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="/src/styles.css">
 	</head>
-
 	<body>
 		<div class="wrapper">
 			<div class="inner">
 				<img src="assets/images/image-1.png" alt="" class="image-1">
-				<form action="">
+				<form #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
 					<h3>New Account?</h3>
 					<div class="form-holder">
-						<span class="lnr lnr-envelope"></span>
-						<input type="text" class="form-control" placeholder="Mail">
+						<span class="lnr lnr-user"></span>
+						<input type="text" ngModel name="name" class="form-control" placeholder="Mail">
 					</div>
 					<div class="form-holder">
-						<span class="lnr lnr-lock"></span>
-						<input type="password" class="form-control" placeholder="Password">
+						<span class="lnr lnr-briefcase"></span>
+						<input type="text" ngModel name="job" class="form-control" placeholder="Job">
 					</div>
 					<button>
 						<span>Register</span>

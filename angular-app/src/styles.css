@@ -83,15 +83,15 @@ body {
   .form-holder {
     position: relative;
     margin-bottom: 21px; }
-    .form-holder span {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 15px;
-      color: #333; }
-      .form-holder span.lnr-lock {
-        left: 2px; }
+  .form-holder span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #333; }
+    .form-holder span.lnr-lock {
+      left: 2px; }
   
   .form-control {
     border: none;
@@ -201,32 +201,7 @@ body {
 
     
     /* ------------------------------ admin-login.php ------------------------------ */
-    .admin-header{
-        min-height: 100vh;
-        width: 100%;
-        background-image: linear-gradient(135deg, var(--primary), var(--secondary));
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;  
-    }
-    .container-myadmin {
-        width: 30%;
-        height: 52%;
-        border: none;
-        background-color: #FFF;
-        text-align: center;
-        position: fixed;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        padding:20px;
-        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
-    .container-myadmin-img {
-        width: 102px;
-        height: 102px;
-    }
+    
     .myadmin-parallelogram {
         position:absolute;
         left:17.5%;
@@ -247,7 +222,7 @@ body {
     }
     header {
         position: fixed;
-        background:#000;
+        background: #000;
         padding: 20px;
         width: 100%;
         height: 70px;
@@ -268,6 +243,7 @@ body {
         background:	#FF7722;
         text-decoration: none;
         float: right;
+        cursor: pointer;
         margin-top: -40px;
         margin-right: 40px;
         border-radius: 2px;
@@ -282,7 +258,7 @@ body {
         text-decoration: none;
     }
     .sidebar {
-        background: #4b0082;
+        background: #accffe;
         margin-top: 70px;
         padding-top: 30px;
         position: fixed;
@@ -299,13 +275,13 @@ body {
         margin-bottom: 10px;
     }
     .sidebar h4 {
-        color: #CCC;
+        color: #000;
         margin-top: 0;
         text-align: center;
         margin-bottom: 20px;
     }
     .sidebar a {
-        color: #FFF;
+        color: #000;
         display: block;
         width: 100%;
         line-height: 60px;
@@ -331,7 +307,7 @@ body {
         transition-property: color;
     }
     label #sidebar_btn:hover {
-        color: #4b0082;
+        color: #accffe;
     
     }
     #check:checked ~ .sidebar {
@@ -348,12 +324,17 @@ body {
     .content {
         margin-left: 250px;
         padding-top: 17%;
-        background: linear-gradient(135deg, #E44D26, #F16529);
+        background: #FFF;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        width: 100%;
         height: 100vh;
         transition: 0.5s;
+        margin-top: 70px;
+        padding-top: 30px;
+        position: fixed;
+        /* transition-property: right; */
     }
     #check:checked ~ .content {
         margin-left: 60px;
@@ -362,26 +343,17 @@ body {
         display: none;
     }
     .content-container-1 {
-        padding-left: 22%;
-        padding-right: 22%;
-        border: none;
-        width: 100%;
-        height: 123%;
-        background: none;
-        position: relative;
-        top: -40%;
-        left: 0%;
-        justify-content: center;
-        /*  */
+      border: none;
+      width: 50%;
+      height: auto;
+      background: none;
+      position: relative;
+      top: 5%;
+      left: 20%;
+      justify-content: center;
     }
-    .content-container-oneView {
-        height: 60%;
-        margin-left: 10%;
-        margin-top: 10px;
-        border: 1px solid #000;
-        background: none;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    #check:checked ~ .content-container-1 {
+        width: 80%;
     }
     .row-oneView-left {
       position: relative;
@@ -417,35 +389,49 @@ body {
       opacity: 1;
     }
     .text {
-      color: white;
+      color: #FFF;
       font-size: 16px;
       padding: 16px 32px;
     }
     .row-oneView {
-        display: flex;
-        justify-content: space-between;
-        color: #000;
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      color: #000;
     }
     .row-oneView-left {
-        flex-basis: 51%;
+      flex-basis: 51%;
     }
     .row-oneView-right {
-        flex-basis: 61%;
-        padding: 20px;
+      flex-basis: 61%;
+      padding: 20px;
+      background: #6b5959;
+      color: #FFF;
     }
 
     .content-container-2 {
-        padding-left: 7%;
-        padding-right: 7%;
-        border: none;
-        width: 100%;
-        height: 123%;
-        background: none;
-        position: relative;
-        top: -40%;
-        left: 0%;
-        justify-content: center;
-        /*  */
+      padding-left: 7%;
+      padding-right: 7%;
+      background: none;
+      position: relative;
+      justify-content: center;
+      border: none;
+      width: 85%;
+      height: auto;
+      top: 5%;
+      left: 0%;
+    }
+    .content-container-oneView {
+      display: flex;
+      justify-content: space-between;
+    }
+    .content-container-oneView-left {
+      flex-basis: 100%;
+    }
+    .content-container-oneView-right {
+      flex-basis: 1%;
+      padding: 20px;
+      margin: auto;
     }
 
     table {
@@ -464,3 +450,23 @@ body {
     tr:nth-child(even) {
       background-color: #daa35b;
     }
+
+    #pagination {
+      position: relative;
+      top: 50%;
+      left: 90%;
+      right: 30px;
+      list-style: none;
+    }
+    #pagination li {
+      position: relative;
+      margin: 20px 0;
+      background: #E44D26;
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      transition: all .2s ease;
+    }
+    #pagination li:hover {
+      transform: scale(1.5);
+    } 

@@ -2,21 +2,19 @@
 <html>
 	<head>
 	</head>
-
 	<body>
-
 		<div class="wrapper">
 			<div class="inner">
 				<img src="assets/images/image-1.png" alt="" class="image-1">
-				<form action="">
+				<form #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
 					<h3>Sign In</h3>
 					<div class="form-holder">
 						<span class="lnr lnr-envelope"></span>
-						<input type="text" class="form-control" placeholder="Mail">
+						<input type="text" ngModel name="email" class="form-control" placeholder="Mail">
 					</div>
 					<div class="form-holder">
 						<span class="lnr lnr-lock"></span>
-						<input type="password" class="form-control" placeholder="Password">
+						<input type="password" ngModel name="password" class="form-control" placeholder="Password">
 					</div>
           			<a routerLink="/sign-up" routerLinkActive="active">Forgot password?</a>
 					<button>
@@ -26,11 +24,12 @@
 						<li>{{u.email}}</li>
 					</ul> -->
 				</form>
-				<img src="assets/images/image-2.png" alt="" class="image-2">
+				<img src="assets/images/image-2.png" class="image-2">
 			</div>
 		</div>
 		
 		<script src="/src/assets/js/jquery-3.3.1.min.js"></script>
 		<script src="/src/assets/js/main.js"></script>
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+	</body>
+	<!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

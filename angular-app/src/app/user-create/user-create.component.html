@@ -10,15 +10,15 @@
         <h3>Admin <span>Panel</span></h3>
     </div>
     <div class="right_area">
-        <a routerLink="/sign-in" class="logout_btn">Logout</a>
+        <a class="logout_btn" (click)="logOut()">Logout</a>
     </div>
 </header>
 <div class="sidebar">
         <!-- <img src="images/user-image.png" class="profile_image" alt=""> -->
         <h4>My Admin</h4>
-        <a routerLink = "/create" routerLinkActive="active">
+        <!-- <a routerLink = "/create" routerLinkActive="active">
         <i class="fas fa-plus-square"></i><span>Create user</span>
-        </a>
+        </a> -->
         <a routerLink = "/list" routerLinkActive="create">
             <i class="fas fa-table"></i><span>List user</span>
         </a>
@@ -27,21 +27,42 @@
 <div class="content">
     <div class="content-container-1">
         <h1 style="font-size:x-large;text-align: center;">Create User</h1>
-        <div class="content-container-oneView">
-            <div class="row-oneView">
-                <div class="row-oneView-left">
-                    <img class="avatar" [src]="itemImageUrl">
-                    <div class="middle">
-                        <div class="text">{{userCreate.first_name}}</div>
-                      </div>
-                </div>
-                <div class="row-oneView-right">
-                    <p>ID:{{userCreate.id}}</p>
-                    <p>Email: {{userCreate.email}}</p>
-                    <p>FirstName: {{userCreate.first_name}}</p>
-                    <p>LastName: {{userCreate.last_name}}</p> 
+        <div class="row-oneView">
+            <div class="row-oneView-left">
+                <img class="avatar" [src]="itemImageUrl">
+                <div class="middle">
+                    <div class="text">{{userCreate.first_name}}</div>
                 </div>
             </div>
+            <div class="row-oneView-right">
+                <h1>{{    userCreate.first_name    }} {{    userCreate.last_name    }}</h1>
+                <br>
+                <br>
+                <p>ID: {{   userCreate.id   }}</p>
+                <br>
+                <p>Email: {{   userCreate.email   }}</p>
+                <br>
+                <p>FirstName: {{   userCreate.first_name   }}</p>
+                <br>
+                <p>LastName: {{   userCreate.last_name   }}</p> 
+            </div>
+                <!-- <ul id = "pagination">
+                    <a routerLink="/sign-up" routerLinkActive="active">Forgot password?</a> -->
+                    <!-- <li><a routerLink="/create/{{user.id}}"></a></li> -->
+                    <!-- <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li> -->
+                <!-- </ul> -->
         </div>
+        <!-- <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" tabindex="-1">Previous</a>
+            </li> -->
+              <!-- <li class="page-item" (click)="getData(page)"><a class="page-link">{{ page }}</a></li>       
+            </ul>
+          </nav>  -->
+          
     </div>
 </div>

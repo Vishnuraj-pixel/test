@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserLoginService } from '../user-login.service';
+import { Router } from '@angular/router';
+import { UserCreateComponent } from '../user-create/user-create.component';
+import { UserLoginService } from '../user-sign-in.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,11 +9,18 @@ import { UserLoginService } from '../user-login.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  userLogIn = [];
-
-  constructor(private _userLoginService: UserLoginService) { }
+  
+  constructor(private _userLoginService: UserLoginService, private route: Router) { }
 
   ngOnInit() {
-    this._userLoginService.getUserLogin().subscribe(data => this.userLogIn = data);
+    
+    
+  }
+  getUserFormData(data: any) {
+    console.log(data)
+    this._userLoginService.saveUser(data).subscribe((result:any) => {
+      localStorage.setItem("token", result.token);
+      this.route.navigate(['/list']);
+    });
   }
 }
