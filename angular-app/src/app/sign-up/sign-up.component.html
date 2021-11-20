@@ -8,13 +8,19 @@
 				<img src="assets/images/image-1.png" alt="" class="image-1">
 				<form #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
 					<h3>New Account?</h3>
+					<div *ngIf="name.invalid && name.dirty">
+						<small>Username is required</small>
+					</div>
 					<div class="form-holder">
 						<span class="lnr lnr-user"></span>
-						<input type="text" ngModel name="name" class="form-control" placeholder="Mail">
+						<input type="text" #name="ngModel" required ngModel name="name" class="form-control" placeholder="Mail">
+					</div>
+					<div *ngIf="job.invalid && job.dirty">
+						<small>Your job is required</small>
 					</div>
 					<div class="form-holder">
 						<span class="lnr lnr-briefcase"></span>
-						<input type="text" ngModel name="job" class="form-control" placeholder="Job">
+						<input type="text" #job="ngModel" required ngModel name="job" class="form-control" placeholder="Job">
 					</div>
 					<button>
 						<span>Register</span>

@@ -9,6 +9,10 @@ import { UserLoginService } from '../user-sign-in.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  usersForm: any;
+  isDisabled:boolean = false;
+  message: string = "";
+  snackbar:string = "";
   
   constructor(private _userLoginService: UserLoginService, private route: Router) { }
 
@@ -22,5 +26,16 @@ export class SignInComponent implements OnInit {
       localStorage.setItem("token", result.token);
       this.route.navigate(['/list']);
     });
+    if(localStorage.getItem("token")) {
+      this.snackbar = "show";
+      setTimeout( () => {
+        this.snackbar = this.snackbar.replace("show", "");
+      }, 3000);
+      this.message = "You have successfully loggedIn";
+
+    } else {
+      this.message = "Please enter valid mail and password"; 
+    }
+    console.log(this.message)
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserDeleteService } from '../user-delete.service';
 import { UserListService } from '../user-list.service';
 
 @Component({
@@ -11,9 +12,8 @@ export class UserListComponent implements OnInit {
   public userList:any = [];
   pagesInUrl:any;
   totalPages:Number | undefined;
-  userDeleteService: any;
   
-  constructor(private _userListService: UserListService, private route: Router) { }
+  constructor(private _userListService: UserListService, private route: Router, private _userDeleteService: UserDeleteService) { }
 
   ngOnInit() {
    this.getData(1); 
@@ -43,7 +43,7 @@ export class UserListComponent implements OnInit {
     console.log(data);
     if(confirm("Would you want to delete this user?")) {
       // console.log("Hello");
-      this.userDeleteService.getUserDelete(data).subscribe((data:any) => {
+      this._userDeleteService.getUserDelete(data).subscribe((data:any) => {
         console.log("Deleted!");
       })
     }else {

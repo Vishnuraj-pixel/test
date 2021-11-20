@@ -10,14 +10,23 @@
 					<h3>Sign In</h3>
 					<div class="form-holder">
 						<span class="lnr lnr-envelope"></span>
-						<input type="text" ngModel name="email" class="form-control" placeholder="Mail">
+						<input type="text" required #email="ngModel" ngModel name="email" class="form-control" placeholder="Mail">
 					</div>
+					
+					<div *ngIf="email.invalid && email.dirty">
+						<small>Mail is required</small>
+					</div>
+					<!-- {{	name.valid	}} -->
+					<br>
 					<div class="form-holder">
 						<span class="lnr lnr-lock"></span>
-						<input type="password" ngModel name="password" class="form-control" placeholder="Password">
+						<input required #password="ngModel" type="password" ngModel name="password" class="form-control" placeholder="Password">
 					</div>
-          			<a routerLink="/sign-up" routerLinkActive="active">Forgot password?</a>
-					<button>
+					<div *ngIf="password.invalid && password.dirty">
+						<small>Password is required</small>
+					</div><br>
+          			<a routerLink="/sign-up" routerLinkActive="active">SIGN UP</a>
+					<button [disabled]="email.invalid && password.invalid">
 						<span>Sign-in</span>
 					</button>
 					<!-- <ul *ngFor = "let u of userLogIn">
@@ -27,6 +36,7 @@
 				<img src="assets/images/image-2.png" class="image-2">
 			</div>
 		</div>
+		<div id="snackbar" [id]="snackbar">{{  message	}}</div>
 		
 		<script src="/src/assets/js/jquery-3.3.1.min.js"></script>
 		<script src="/src/assets/js/main.js"></script>
