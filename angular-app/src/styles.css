@@ -59,7 +59,7 @@ body {
     bottom: 0;
     right: -129px; }
   
-  form {
+  .form-container {
     width: 100%;
     position: relative;
     z-index: 9;
@@ -185,7 +185,7 @@ body {
     .image-1, .image-2 {
       display: none; }
 
-    form {
+    .form-container {
       padding: 35px;
       box-shadow: none;
       -webkit-box-shadow: none;
@@ -254,9 +254,10 @@ body {
         transition-property: background;
     }
     .logout_btn:hover {
-        background: #E44D26;
+        background: #2196F3;
         text-decoration: none;
     }
+
     .sidebar {
         background: #accffe;
         margin-top: 70px;
@@ -424,6 +425,13 @@ body {
     .content-container-oneView {
       display: flex;
       justify-content: space-between;
+    }
+    #myInput {
+      width: 92.5%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
     }
     .content-container-oneView-left {
       flex-basis: 100%;

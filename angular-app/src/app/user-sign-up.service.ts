@@ -16,7 +16,7 @@ export class UserSignUpService {
   }
 
   saveUser(data: any) {
-    return this.http.post<IUser>(this._url, data);
+      return this.http.post<IUser>(this._url, data);
   }
 }
 

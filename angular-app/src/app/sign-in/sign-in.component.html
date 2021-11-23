@@ -6,27 +6,41 @@
 		<div class="wrapper">
 			<div class="inner">
 				<img src="assets/images/image-1.png" alt="" class="image-1">
-				<form #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
+				<form class="form-container" #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
 					<h3>Sign In</h3>
-					<div class="form-holder">
-						<span class="lnr lnr-envelope"></span>
-						<input type="text" required #email="ngModel" ngModel name="email" class="form-control" placeholder="Mail">
+					<div class="form-group">
+						<div *ngIf="email.errors && (email.invalid && email.touched)">
+							<small *ngIf="email.errors['required']">email is required</small>
+							<small *ngIf="email.errors['minlength']">email minimum length is 3</small>
+						</div>
+						<div class="form-holder">
+							<span class="lnr lnr-envelope"></span>
+							<input type="text" required minlength="3" #email="ngModel" ngModel name="email" 
+							[class.is-invalid]="email.touched && email.invalid" class="form-control" placeholder="Mail">
+						</div>
 					</div>
 					
-					<div *ngIf="email.invalid && email.dirty">
+					<!-- <div *ngIf="email.invalid && email.dirty">
 						<small>Mail is required</small>
-					</div>
+					</div> -->
 					<!-- {{	name.valid	}} -->
 					<br>
-					<div class="form-holder">
-						<span class="lnr lnr-lock"></span>
-						<input required #password="ngModel" type="password" ngModel name="password" class="form-control" placeholder="Password">
+					<div class="form-group">
+						<div *ngIf="password.errors && (password.invalid && password.touched)">
+							<small *ngIf="password.errors['required']">password is required</small>
+							<small *ngIf="password.errors['minlength']">email minimum length is 3</small>
+						</div>
+						<div class="form-holder">
+							<span class="lnr lnr-lock"></span>
+							<input required #password="ngModel" type="password" ngModel name="password" class="form-control" placeholder="Password">
+						</div>
 					</div>
-					<div *ngIf="password.invalid && password.dirty">
+					<!-- <div *ngIf="password.invalid && password.dirty">
 						<small>Password is required</small>
-					</div><br>
+					</div>-->
+					<br>
           			<a routerLink="/sign-up" routerLinkActive="active">SIGN UP</a>
-					<button [disabled]="email.invalid && password.invalid">
+					<button [disabled]="usersForm.form.invalid" type="submit">
 						<span>Sign-in</span>
 					</button>
 					<!-- <ul *ngFor = "let u of userLogIn">
@@ -35,9 +49,7 @@
 				</form>
 				<img src="assets/images/image-2.png" class="image-2">
 			</div>
-		</div>
-		<div id="snackbar" [id]="snackbar">{{  message	}}</div>
-		
+		</div>	
 		<script src="/src/assets/js/jquery-3.3.1.min.js"></script>
 		<script src="/src/assets/js/main.js"></script>
 	</body>

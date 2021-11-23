@@ -6,23 +6,33 @@
 		<div class="wrapper">
 			<div class="inner">
 				<img src="assets/images/image-1.png" alt="" class="image-1">
-				<form #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
+				<form class="form-container" #usersForm= "ngForm" (ngSubmit)= "getUserFormData(usersForm.value)">
 					<h3>New Account?</h3>
-					<div *ngIf="name.invalid && name.dirty">
-						<small>Username is required</small>
+					<div class="form-group">
+						<div *ngIf="name.errors && (name.invalid && name.touched)">
+							<small *ngIf="name.errors['required']">Username is required</small>
+							<small *ngIf="name.errors['minlength']">Username's minimum length is 3</small>
+						</div>
+						<div class="form-holder">
+							<span class="lnr lnr-user"></span>
+							<input type="text" minlength="3" required class="form-control" #name="ngModel" 
+							[class.is-invalid]="name.touched && name.invalid"  ngModel name="name" 
+							placeholder="Username">
+						</div>
 					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-user"></span>
-						<input type="text" #name="ngModel" required ngModel name="name" class="form-control" placeholder="Mail">
+					<div class="form-group">
+						<div *ngIf="job.errors && (job.invalid && job.touched)">
+							<small *ngIf="job.errors['required']">Job is required</small>
+							<small *ngIf="job.errors['minlength']">Job's minimum length is 3</small>
+						</div>
+						<div class="form-holder">
+							<span class="lnr lnr-briefcase"></span>
+							<input type="text" minlength="3" required class="form-control" #job="ngModel" 
+							[class.is-invalid]="job.touched && job.invalid" ngModel name="job" 
+							placeholder="Job">
+						</div>
 					</div>
-					<div *ngIf="job.invalid && job.dirty">
-						<small>Your job is required</small>
-					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-briefcase"></span>
-						<input type="text" #job="ngModel" required ngModel name="job" class="form-control" placeholder="Job">
-					</div>
-					<button>
+					<button type="submit">
 						<span>Register</span>
 					</button>
 				</form>

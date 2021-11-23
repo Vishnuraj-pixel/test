@@ -8,13 +8,17 @@ import { UserListComponent } from './user-list/user-list.component';
 import {  AuthenticationGuard } from './authentication.guard';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NonAuthenticationGuard } from './non-authentication.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-in', component: SignInComponent,
+    canActivate: [NonAuthenticationGuard]
+  },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'create/:id', component: UserCreateComponent, 
       canActivate: [AuthenticationGuard],
+      
   },
   { path: 'list', component: UserListComponent,
       canActivate: [AuthenticationGuard]  // visit home only if authenticated

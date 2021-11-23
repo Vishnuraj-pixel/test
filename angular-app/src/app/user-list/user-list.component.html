@@ -26,9 +26,14 @@
 <div class="content">
     <div class="content-container-2">
         <h1 style="font-size:x-large;text-align: center;">List of User</h1>
+        <form #usersForm = "ngForm" (keyup)="showTableContent($event)">
+          <input ngModel name="first_name" #first_name = "ngModel" type="text" id="myInput"  
+          placeholder="Search for email" ngModel class="form-control" title="Type in a name">
+        </form>
         <div class="content-container-oneView">
           <div class="content-container-oneView-left">
             <table>
+              <thead>
               <tr>
                 <th>Id</th>
                 <th>Email</th>
@@ -42,26 +47,29 @@
                 <td>{{  user.first_name  }}</td>
                 <td>{{  user.last_name  }}</td>
                 <td style="text-align: center;">
-                    <div class="btn-group">
-                      <a routerLink="/create/{{ user.id }}" routerLinkActive="active" class="btn btn-info btn-sm">View</a>
-                      <a routerLink="/update/{{ user.id }}" routerLinkActive="active" class="btn btn-success btn-sm">Update</a>
-                      <a (click)= "userDelete(user.id)" class="btn btn-danger btn-sm">Delete</a>
-                    </div>
+                  <div class="btn-group">
+                    <a routerLink="/create/{{ user.id }}" routerLinkActive="active" 
+                    class="btn btn-info btn-sm">View</a>
+                    <a routerLink="/update/{{ user.id }}" routerLinkActive="active" 
+                    class="btn btn-success btn-sm">Update</a>
+                    <a (click)= "userDelete(user.id)" class="btn btn-danger btn-sm">Delete</a>
+                  </div>
                 </td>
               </tr>
+            </thead>
             </table>
           </div>
           <div class="content-container-oneView-right">
-            <nav aria-label="Page navigation example">
-              <ul id = "pagination" *ngFor="let page of pagesInUrl">
-                <li class="page-item" (click)="getData(page)"><a class="page-link"></a></li>
-              </ul>
-            </nav>
             <!-- <nav aria-label="Page navigation example">
+              <ul id = "pagination" *ngFor="let page of pagesInUrl">
+                <li class="page-item" (click)="getData(page)"><a></a></li>
+              </ul>
+            </nav> -->
+            <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center" *ngFor="let page of pagesInUrl">
                 <li class="page-item" (click)="getData(page)"><a class="page-link">{{ page }}</a></li>       
               </ul>
-            </nav>  -->
+            </nav> 
         </div>
     </div>
    

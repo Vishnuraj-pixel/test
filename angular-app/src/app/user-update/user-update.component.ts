@@ -9,9 +9,7 @@ import { UserUpdateService } from '../user-update.service';
 })
 export class UserUpdateComponent implements OnInit {
   userId: any;
-  firstName: any;
-  lastName: any;
-  userName: string = "";
+  userName: any;
 
   constructor(private _userUpdateService: UserUpdateService, private route: Router, private router: ActivatedRoute) { }
 
@@ -21,9 +19,7 @@ export class UserUpdateComponent implements OnInit {
       this.userId = id;
     });
     this._userUpdateService.getUserUpdate(this.userId).subscribe((data:any) => {
-      this.firstName = data.data.first_name;
-      this.lastName = data.data.last_name;
-      this.userName = this.firstName + " " + this.lastName;
+      this.userName = data.data.first_name + " " + data.data.last_name;
     })
   }
   getUserFormData(data: any) {
